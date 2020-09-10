@@ -9,3 +9,5 @@ app.use('/users', require('./routes/user'));
 app.listen(port, () => {
     console.log(`Server on port http://localhost:${port}`);
 });
+
+module.exports = app;
