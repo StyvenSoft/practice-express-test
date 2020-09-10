@@ -45,3 +45,21 @@ describe('GET /users/:id', () => {
             });
     });
 });
+
+describe('POST /users', () => {
+    it('Respond with 201 created', done => {
+        const data = {
+            username: 'root',
+            password: 'toor'
+        }
+        request(app)
+            .post('/users')
+            .send(data)
+            .set('Accept', 'Application/json')
+            .expect('Content-Type', /json/)
+            .expect(201)
+            .end((err) => {
+                err ? done(err) : done();
+            })
+    });
+});
