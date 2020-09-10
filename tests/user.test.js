@@ -20,4 +20,28 @@ describe('GET /users/:id', () => {
             .expect('Content-type', /json/)
             .expect(200, done);
     });
+
+    it('Respond with json "User found: user01" when the user exists', (done) => {
+        request(app)
+            .get('/users/user01')
+            .set("Accept", "application/json")
+            .expect('Content-type', /json/)
+            .expect(200)
+            .expect('"User found: user01"')
+            .end((err) => {
+                err ? done(err) : done();
+            });
+    });
+
+    it('Respond with json "user not found" when the user dont exists', (done) => {
+        request(app)
+            .get('/users/notstringuser')
+            .set("Accept", "application/json")
+            .expect('Content-type', /json/)
+            .expect(404)
+            .expect('"User not found!"')
+            .end((err) => {
+                err ? done(err) : done();
+            });
+    });
 });
