@@ -1,0 +1,25 @@
+{
+  "name": "practice-express-test",
+  "version": "1.0.0",
+  "description": "This is a simple example of Supertest, an npm module that allows you to test backend web applications such as REST APIs. In this example we will create a few endpoints and do some tests on them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StyvenSoft/practice-express-test.git"
+  },
+  "keywords": [],
+  "author": "Steveen Echeverri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StyvenSoft/practice-express-test/issues"
+  },
+  "homepage": "https://github.com/StyvenSoft/practice-express-test#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
