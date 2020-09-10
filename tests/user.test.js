@@ -62,4 +62,18 @@ describe('POST /users', () => {
                 err ? done(err) : done();
             })
     });
+
+    it('Respond code 400 on bad request', done => {
+        const data = {};
+        request(app)
+            .post('/users')
+            .send(data)
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(400)
+            .expect('"User not created!"')
+            .end((err) => {
+                err ? done(err) : done();
+            })
+    });
 });
